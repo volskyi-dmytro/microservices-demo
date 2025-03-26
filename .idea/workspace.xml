@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6bf67cf6-c900-474b-96b6-4c137704a711" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/accounts/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/AccountsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/audit/AuditorAwareImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/constants/AccountsConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/controllers/AccountsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/dto/AccountsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/dto/CustomerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/dto/ErrorResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/dto/ResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/entity/Accounts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/exception/CustomerAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/mapper/AccountsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/mapper/CustomerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/repositories/AccountsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/repositories/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/service/IAccountsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/stpunk47/accounts/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/test/java/com/stpunk47/accounts/AccountsApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/CardsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/audit/AuditAwareImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/constants/CardsConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/controller/CardsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/dto/CardsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/dto/ErrorResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/dto/ResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/entity/Cards.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/exception/CardAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/mapper/CardsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/repository/CardsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/service/ICardsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/stpunk47/cards/service/impl/CardsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/test/java/com/stpunk47/cards/CardsApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/LoansApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/audit/AuditAwareImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/constants/LoansConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/controller/LoansController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/dto/ErrorResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/dto/LoansDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/dto/ResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/entity/Loans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/exception/LoanAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/mapper/LoansMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/repository/LoansRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/service/ILoansService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/stpunk47/loans/service/impl/LoansServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/test/java/com/stpunk47/loans/LoansApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "volskyi-dmytro"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/volskyi-dmytro/microservices-demo.git",
+    "accountId": "2b14ede6-2a25-4d5c-8d5e-defa270a169c"
+  }
+}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2ue0Czte2feg3ooAehFN20SjVfk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.accounts [clean].executor": "Run",
+    "Maven.accounts [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.AccountsApplication.executor": "Run",
+    "Spring Boot.CardsApplication.executor": "Run",
+    "Spring Boot.LoansApplication.executor": "Run",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "H:/Work/Spring_Boot_Microservices/section2/loans",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.stpunk47.accounts.dto" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AccountsApplication">
+    <configuration name="AccountsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="accounts" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stpunk47.accounts.AccountsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="cards" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stpunk47.cards.CardsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoansApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="loans" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stpunk47.loans.LoansApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bf67cf6-c900-474b-96b6-4c137704a711" name="Changes" comment="" />
+      <created>1742593610476</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742593610476</updated>
+      <workItem from="1742593611757" duration="287000" />
+      <workItem from="1742593906722" duration="27269000" />
+      <workItem from="1742672554642" duration="9279000" />
+      <workItem from="1742750520958" duration="625000" />
+      <workItem from="1742802898605" duration="616000" />
+      <workItem from="1742849608105" duration="4331000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

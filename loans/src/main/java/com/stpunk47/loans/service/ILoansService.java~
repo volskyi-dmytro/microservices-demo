@@ -1,0 +1,7 @@
+package com.stpunk47.loans.service;
+
+public interface ILoansService {
+
+    
+
+}

@@ -1,0 +1,4 @@
+package com.stpunk47.cards.service;
+
+public interface ICardsService {
+}

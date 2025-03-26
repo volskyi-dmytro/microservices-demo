@@ -1,0 +1,11 @@
+package com.stpunk47.loans.repository;
+
+import com.stpunk47.loans.entity.Loans;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class LoansRepository extends JpaRepository<Loans, Long> {
+
+    
+}

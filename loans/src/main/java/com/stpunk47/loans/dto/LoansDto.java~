@@ -1,0 +1,14 @@
+package com.stpunk47.loans.dto;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Data;
+
+@Schema(name = "Loans",
+        description = "Schema to hold Loan information"
+)
+@Data
+public class LoansDto {
+
+    
+
+}

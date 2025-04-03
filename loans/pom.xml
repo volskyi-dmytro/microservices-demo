@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.stpunk47</groupId>
 	<artifactId>loans</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>v1</version>
 	<name>loans</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -93,6 +93,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<image>
+						<name>stpunk47/${project.artifactId}:${project.version}</name>
+					</image>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

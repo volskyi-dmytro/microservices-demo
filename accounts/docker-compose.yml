@@ -1,6 +1,6 @@
 services:
   accounts:
-    image: stpunk47/accounts:v1
+    image: stpunk47/accounts:v2
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -11,18 +11,18 @@ services:
     networks:
       - stbank-network
   loans:
-    image: stpunk47/loans:v1
+    image: stpunk47/loans:v2
     container_name: loans-ms
     ports:
       - "8090:8090"
     deploy:
       resources:
         limits:
-          memory: "512m"
+          memory: "768m"  # Increased from 512m to 768m
     networks:
       - stbank-network
   cards:
-    image: stpunk47/cards:v1
+    image: stpunk47/cards:v2
     container_name: cards-ms
     ports:
       - "9000:9000"

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.stpunk47</groupId>
 	<artifactId>loans</artifactId>
-	<version>v1</version>
+	<version>v2</version>
 	<name>loans</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -90,18 +90,13 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.5</version>
 				<configuration>
-					<image>
-						<name>stpunk47/${project.artifactId}:${project.version}</name>
-					</image>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
+					<to>
+						<image>stpunk47/${project.artifactId}:${project.version}</image>
+					</to>
 				</configuration>
 			</plugin>
 		</plugins>

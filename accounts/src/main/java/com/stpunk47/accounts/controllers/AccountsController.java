@@ -4,6 +4,7 @@ import com.stpunk47.accounts.constants.AccountsConstants;
 import com.stpunk47.accounts.dto.CustomerDto;
 import com.stpunk47.accounts.dto.ErrorResponseDto;
 import com.stpunk47.accounts.dto.ResponseDto;
+import com.stpunk47.accounts.dto.AccountsContactInfoDto;
 import com.stpunk47.accounts.service.IAccountsService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -35,12 +36,32 @@ import org.springframework.web.bind.annotation.*;
 public class AccountsController {
 
     private final IAccountsService accountService;
+    private final AccountsContactInfoDto accountsContactInfoDto;
 
     @Value("${build.version}")
     private String buildVersion;
 
     @Autowired
     private Environment environment;
+
+    @Operation(summary = "Contact Info REST API", description = "REST API to get contact information")
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    })
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        return ResponseEntity.ok(accountsContactInfoDto);
+    }
 
     @Operation(
             summary = "Create Account REST API",

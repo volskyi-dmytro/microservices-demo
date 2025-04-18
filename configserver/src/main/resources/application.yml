@@ -5,9 +5,14 @@ spring:
   application:
     name: "configserver"
   profiles:
-    active: native
+    active: git
   cloud:
     config:
       server:
-        native:
-          search-locations: "classpath:/config"
+        git:
+          uri: https://github.com/volskyi-dmytro/config-tmp.git
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+

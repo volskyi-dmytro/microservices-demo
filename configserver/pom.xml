@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.stpunk47</groupId>
 	<artifactId>configserver</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>v2</version>
 	<name>configserver</name>
 	<description>Config Server for ST_Bank microservices</description>
 	<url/>
@@ -74,6 +74,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.5</version>
+				<configuration>
+					<to>
+						<image>stpunk47/${project.artifactId}:${project.version}</image>
+					</to>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

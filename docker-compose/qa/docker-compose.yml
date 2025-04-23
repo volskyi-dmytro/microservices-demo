@@ -1,0 +1,71 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    hostname: rabbitmq.local
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: rabbitmq-diagnostics check_port_connectivity
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
+  configserver:
+    image: stpunk47/configserver:v2
+    container_name: configserver-ms
+    ports:
+      - "8071:8071"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: "curl --fail --silent http://localhost:8071/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
+
+  accounts:
+    image: stpunk47/accounts:v2
+    container_name: accounts-ms
+    ports:
+      - "8080:8080"
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+    environment:
+      SPRING_APPLICATION_NAME: "accounts"
+
+  loans:
+    image: stpunk47/loans:v2
+    container_name: loans-ms
+    ports:
+      - "8090:8090"
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+    environment:
+      SPRING_APPLICATION_NAME: "loans"
+
+  cards:
+    image: stpunk47/cards:v2
+    container_name: cards-ms
+    ports:
+      - "9000:9000"
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+    environment:
+      SPRING_APPLICATION_NAME: "cards"
+
+networks:
+  stbank-network:
+    driver: "bridge"

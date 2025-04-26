@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.stpunk47</groupId>
 	<artifactId>configserver</artifactId>
-	<version>v2</version>
+	<version>v3</version>
 	<name>configserver</name>
 	<description>Config Server for ST_Bank microservices</description>
 	<url/>

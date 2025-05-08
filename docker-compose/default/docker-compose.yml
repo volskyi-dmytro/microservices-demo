@@ -14,6 +14,26 @@ services:
       file: common-config.yml
       service: microservice-base-config
 
+  eurekaserver:
+    image: stpunk47/eurekaserver:v3
+    container_name: eurekaserver-ms
+    ports:
+      - "8070:8070"
+    healthcheck:
+      test: "curl --fail --silent http://localhost:8070/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
+    depends_on:
+     configserver:
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: "eurekaserver"
+
   accounts:
     image: stpunk47/accounts:v3
     container_name: accounts-ms

@@ -46,3 +46,9 @@ management:
       show-details: always
     shutdown:
       access: unrestricted
+
+logging:
+  level:
+    com:
+      stpunk47:
+        cards: DEBUG

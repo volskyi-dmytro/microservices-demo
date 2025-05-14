@@ -31,3 +31,9 @@ management:
       access: unrestricted
     gateway:
       access: unrestricted
+
+logging:
+  level:
+    com:
+      stpunk47:
+        gatewayserver: DEBUG

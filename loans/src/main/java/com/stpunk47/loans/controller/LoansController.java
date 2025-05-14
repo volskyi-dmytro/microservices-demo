@@ -25,6 +25,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Tag(
         name = "CRUD REST APIs for Loans in ST_Bank",
         description = "CRUD REST APIs in ST_Bank to CREATE, UPDATE, FETCH AND DELETE loan details"
@@ -35,6 +38,7 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 public class LoansController {
 
+    private static final Logger logger = LoggerFactory.getLogger(LoansController.class.getName());
     private final ILoansService iLoansService;
 
     private final LoansContactInfoDto loansContactInfoDto;
@@ -92,9 +96,10 @@ public class LoansController {
     }
     )
     @GetMapping("/fetch")
-    public ResponseEntity<LoansDto> fetchLoanDetails(@RequestParam
-                                                     @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
+    public ResponseEntity<LoansDto> fetchLoanDetails(@RequestHeader("stbank-correlation-id") String correlationId,
+            @RequestParam @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                      String mobileNumber) {
+        logger.debug("stbank-correlation-id found: {}", correlationId);
         LoansDto loansDto = iLoansService.fetchLoan(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(loansDto);
     }

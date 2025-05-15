@@ -1,6 +1,6 @@
 services:
   configserver:
-    image: stpunk47/configserver:v3
+    image: "stpunk47/configserver:v3"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -15,7 +15,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: stpunk47/eurekaserver:v3
+    image: "stpunk47/eurekaserver:v3"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -30,12 +30,17 @@ services:
       start_period: 10s
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: microservice-base-config
     environment:
       SPRING_APPLICATION_NAME: "eurekaserver"
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: "optional:configserver:http://configserver:8071/"
+      SPRING_CLOUD_CONFIG_URI: "http://configserver:8071"
+      SPRING_CLOUD_CONFIG_FAIL_FAST: "false"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8070/eureka/"
 
   accounts:
-    image: stpunk47/accounts:v3
+    image: "stpunk47/accounts:v3"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -44,6 +49,12 @@ services:
         condition: service_healthy
       eurekaserver:
         condition: service_healthy
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     extends:
       file: common-config.yml
       service: microservice-eurekaserver-config
@@ -52,7 +63,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://micro-sql.local:3306/accountsdb"
 
   loans:
-    image: stpunk47/loans:v3
+    image: "stpunk47/loans:v3"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -61,6 +72,12 @@ services:
         condition: service_healthy
       eurekaserver:
         condition: service_healthy
+    healthcheck:
+      test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     extends:
       file: common-config.yml
       service: microservice-eurekaserver-config
@@ -69,7 +86,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://micro-sql.local:3307/loansdb"
 
   cards:
-    image: stpunk47/cards:v3
+    image: "stpunk47/cards:v3"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -78,12 +95,36 @@ services:
         condition: service_healthy
       eurekaserver:
         condition: service_healthy
+    healthcheck:
+      test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     extends:
       file: common-config.yml
       service: microservice-eurekaserver-config
     environment:
       SPRING_APPLICATION_NAME: "cards"
       SPRING_DATASOURCE_URL: "jdbc:mysql://micro-sql.local:3308/cardsdb"
+
+  gatewayserver:
+    image: "stpunk47/gatewayserver:v3"
+    container_name: gatewayserver-ms
+    ports:
+      - "8072:8072"
+    depends_on:
+      accounts:
+        condition: service_healthy
+      loans:
+        condition: service_healthy
+      cards:
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: "gatewayserver"
+    extends:
+      file: common-config.yml
+      service: microservice-eurekaserver-config
 
 networks:
   stbank-network:

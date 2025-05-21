@@ -6,6 +6,7 @@ import com.stpunk47.accounts.dto.ErrorResponseDto;
 import com.stpunk47.accounts.dto.ResponseDto;
 import com.stpunk47.accounts.dto.AccountsContactInfoDto;
 import com.stpunk47.accounts.service.IAccountsService;
+import io.github.resilience4j.retry.annotation.Retry;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -190,9 +191,16 @@ public class AccountsController {
                     )
             )
     })
+    @Retry(name="getBuildVersion", fallbackMethod = "getBuildVersionFallback")
     @GetMapping("/build-info")
     public ResponseEntity<String> getBuildVersion() {
         return ResponseEntity.ok(buildVersion);
+    }
+
+    public ResponseEntity<String> getBuildVersionFallback(Throwable throwable) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Unable to get build version");
     }
 
     @Operation(summary = "Java Version REST API", description = "REST API to get Java version")

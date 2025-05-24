@@ -80,3 +80,10 @@ resilience4j.retry:
       waitDuration: 1s
       enable-exponential-backoff: true
       exponential-backoff-multiplier: 2
+
+resilience4j.ratelimiter:
+  configs:
+    default:
+      timeoutDuration: 1s
+      limitRefreshPeriod: 5s
+      limitForPeriod: 1

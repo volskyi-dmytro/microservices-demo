@@ -58,6 +58,12 @@ management:
         enabled: true
     shutdown:
       access: unrestricted
+    prometheus:
+      access: unrestricted
+  prometheus:
+    metrics:
+      export:
+        enabled: true
 
 logging:
   level:

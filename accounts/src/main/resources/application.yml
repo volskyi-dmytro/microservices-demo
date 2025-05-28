@@ -73,6 +73,8 @@ logging:
     com:
       stpunk47:
         accounts: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{traceId},%X{spanId}]"
 
 resilience4j.circuitbreaker:
   configs:

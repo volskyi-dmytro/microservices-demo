@@ -67,3 +67,5 @@ logging:
     com:
       stpunk47:
         loans: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{traceId},%X{spanId}]"

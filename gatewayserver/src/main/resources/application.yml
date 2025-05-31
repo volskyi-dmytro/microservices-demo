@@ -18,6 +18,11 @@ spring:
       host: redis.local
       port: 6379
       timeout: 1s
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "http://keycloak.local:7080/realms/master/protocol/openid-connect/certs"
 
 info:
   app:

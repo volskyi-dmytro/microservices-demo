@@ -272,8 +272,6 @@ services:
   accounts:
     image: "stpunk47/accounts:v4"
     container_name: accounts-ms
-    ports:
-      - "8080:8080"
     depends_on:
       configserver:
         condition: service_healthy
@@ -296,8 +294,6 @@ services:
   loans:
     image: "stpunk47/loans:v4"
     container_name: loans-ms
-    ports:
-      - "8090:8090"
     depends_on:
       configserver:
         condition: service_healthy
@@ -320,8 +316,6 @@ services:
   cards:
     image: "stpunk47/cards:v4"
     container_name: cards-ms
-    ports:
-      - "9000:9000"
     depends_on:
       configserver:
         condition: service_healthy

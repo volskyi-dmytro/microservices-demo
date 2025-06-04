@@ -2,6 +2,7 @@ package com.stpunk47.accounts.service.impl;
 
 import com.stpunk47.accounts.constants.AccountsConstants;
 import com.stpunk47.accounts.dto.AccountsDto;
+import com.stpunk47.accounts.dto.AccountsMsgDto;
 import com.stpunk47.accounts.dto.CustomerDto;
 import com.stpunk47.accounts.entity.Accounts;
 import com.stpunk47.accounts.entity.Customer;
@@ -13,6 +14,9 @@ import com.stpunk47.accounts.repositories.AccountsRepository;
 import com.stpunk47.accounts.repositories.CustomerRepository;
 import com.stpunk47.accounts.service.IAccountsService;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -23,8 +27,11 @@ import java.util.Random;
 @AllArgsConstructor
 public class AccountServiceImpl implements IAccountsService {
 
+    private static final Logger logger = LoggerFactory.getLogger(AccountServiceImpl.class);
     private AccountsRepository accountsRepository;
     private CustomerRepository customerRepository;
+    private final StreamBridge streamBridge;
+
 
     @Override
     public void createAccount(CustomerDto customerDto) {
@@ -39,7 +46,17 @@ public class AccountServiceImpl implements IAccountsService {
         }
 
         Customer savedCustomer = customerRepository.save(customer);
-        accountsRepository.save(createNewAccount(savedCustomer));
+        Accounts savedAccount = accountsRepository.save(createNewAccount(savedCustomer));
+
+        sendCommunication(savedAccount, savedCustomer);
+    }
+
+    private void sendCommunication(Accounts account, Customer customer) {
+        var accountsMsgDto = new AccountsMsgDto(account.getAccountNumber(),
+                customer.getName(), customer.getEmail(), customer.getMobileNumber());
+        logger.info("Sending message with details: {}", accountsMsgDto);
+        var result = streamBridge.send("sendCommunication-out-0", accountsMsgDto);
+        logger.info("Is the communication processed? : {}", result);
     }
 
     /**

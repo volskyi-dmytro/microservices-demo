@@ -1,0 +1,1 @@
+ALTER TABLE accounts ADD COLUMN communication_switch boolean NOT NULL DEFAULT false;
